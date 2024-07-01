@@ -73,30 +73,6 @@
             layers = <0>;
         };
 
-        lh_7 {
-            bindings = <&kp N7>;
-            key-positions = <16 15>;
-            layers = <0>;
-        };
-
-        lh_8 {
-            bindings = <&kp N8>;
-            key-positions = <14 15>;
-            layers = <0>;
-        };
-
-        lh_9 {
-            bindings = <&kp N9>;
-            key-positions = <14 13>;
-            layers = <0>;
-        };
-
-        lh_0 {
-            bindings = <&kp N0>;
-            key-positions = <13 12>;
-            layers = <0>;
-        };
-
         rh_pinky_enter {
             bindings = <&kp ENTER>;
             key-positions = <35 34>;
@@ -104,47 +80,47 @@
 
         lh_open_paren {
             bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <30 31>;
+            key-positions = <31 45>;
         };
 
         lh_close_paren {
             bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <31 32>;
+            key-positions = <32 46>;
         };
 
         lh_open_brace {
             bindings = <&kp LEFT_BRACE>;
-            key-positions = <19 18>;
+            key-positions = <19 31>;
         };
 
         lh_close_brace {
             bindings = <&kp RIGHT_BRACE>;
-            key-positions = <19 20>;
+            key-positions = <20 32>;
         };
 
         lh_open_bracket {
             bindings = <&kp LEFT_BRACKET>;
-            key-positions = <44 45>;
+            key-positions = <30 18>;
         };
 
         lh_close_bracket {
             bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <45 46>;
+            key-positions = <33 21>;
         };
 
         lh_single_arrow {
             bindings = <&single_arrow>;
-            key-positions = <44 43>;
+            key-positions = <30 44>;
         };
 
         lh_double_arrow {
             bindings = <&double_arrow>;
-            key-positions = <43 30>;
+            key-positions = <47 33>;
         };
 
         rh_caret {
             bindings = <&kp CARET>;
-            key-positions = <18 30>;
+            key-positions = <18 6>;
         };
 
         lh_dollar {
