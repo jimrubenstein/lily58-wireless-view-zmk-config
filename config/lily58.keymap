@@ -211,6 +211,31 @@
             #binding-cells = <0>;
             bindings = <&sk LSHIFT>, <&caps_word>;
         };
+
+        left_up: left_up {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LEFT_UP";
+            bindings = <&kp LEFT>, <&kp UP_ARROW>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        right_down: right_down {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RIGHT_DOWN";
+            bindings = <&kp RIGHT>, <&kp DOWN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        tap_dance_toggle_numbers: tap_dance_toggle_numbers {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_TOGGLE_NUMBERS";
+            #binding-cells = <0>;
+            bindings = <&mo 1>, <&mo 1>, <&to 1>;
+        };
     };
 
     keymap {
@@ -226,11 +251,11 @@
 
             display-name = "Base";
             bindings = <
-&kp ESC              &kp N1                      &kp N2                       &kp N3                      &kp N4                          &kp N5                                  &kp N6     &kp N7                                &kp N8                   &kp N9                    &kp N0                                &kp EQUAL
-&kp TAB              &kp Q                       &kp W                        &kp E                       &kp R                           &kp T                                   &kp Y      &kp U                                 &kp I                    &kp O                     &kp P                                 &kp MINUS
-&kp LCTRL            &leftHand_hr_mt LEFT_ALT A  &leftHand_hr_mt LA(LCTRL) S  &leftHand_hr_mt LEFT_GUI D  &leftHand_hr_mt_shift LSHIFT F  &kp G                                   &kp H      &rightHand_hr_mt_shift RIGHT_SHIFT J  &rightHand_hr_mt RGUI K  &rightHand_hr_mt RCTRL L  &rightHand_hr_mt RIGHT_ALT SEMICOLON  &kp SQT
-&td_lshift_capsword  &kp Z                       &kp X                        &kp C                       &kp V                           &kp B   &mo 1                &mo 2      &kp N      &kp M                                 &kp COMMA                &kp DOT                   &kp FSLH                              &kp RSHFT
-                                                                              &kp LALT                    &kp LGUI                        &mo 3   &backspace_delete    &kp SPACE  &kp ENTER  &kp LEFT                              &kp RIGHT
+&kp ESC              &kp N1                      &kp N2                       &kp N3                      &kp N4                          &kp N5                                          &kp N6     &kp N7                                &kp N8                   &kp N9                    &kp N0                                &kp EQUAL
+&kp TAB              &kp Q                       &kp W                        &kp E                       &kp R                           &kp T                                           &kp Y      &kp U                                 &kp I                    &kp O                     &kp P                                 &kp MINUS
+&kp LCTRL            &leftHand_hr_mt LEFT_ALT A  &leftHand_hr_mt LA(LCTRL) S  &leftHand_hr_mt LEFT_GUI D  &leftHand_hr_mt_shift LSHIFT F  &kp G                                           &kp H      &rightHand_hr_mt_shift RIGHT_SHIFT J  &rightHand_hr_mt RGUI K  &rightHand_hr_mt RCTRL L  &rightHand_hr_mt RIGHT_ALT SEMICOLON  &kp SQT
+&td_lshift_capsword  &kp Z                       &kp X                        &kp C                       &kp V                           &kp B   &tap_dance_toggle_numbers    &mo 2      &kp N      &kp M                                 &kp COMMA                &kp DOT                   &kp FSLH                              &td_lshift_capsword
+                                                                              &kp LALT                    &kp LGUI                        &mo 3   &backspace_delete            &kp SPACE  &kp ENTER  &left_up                              &right_down
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -241,7 +266,7 @@
 &kp LC(LG(Q))  &trans  &trans  &kp LC(LS(LG(NUMBER_4)))  &trans  &trans                       &kp C_PREVIOUS  &kp C_NEXT    &kp C_PP  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp BSPC
 &trans         &trans  &trans  &trans                    &trans  &trans                       &kp LS(STAR)    &kp N7        &kp N8    &kp N9             &trans           &trans
 &trans         &trans  &trans  &trans                    &trans  &trans                       &kp FSLH        &kp N4        &kp N5    &kp N6             &kp RET          &trans
-&trans         &trans  &trans  &trans                    &trans  &trans  &trans    &trans     &kp MINUS       &kp N1        &kp N2    &kp N3             &kp EQUAL        &trans
+&trans         &trans  &trans  &trans                    &trans  &trans  &trans    &to 0      &kp MINUS       &kp N1        &kp N2    &kp N3             &kp EQUAL        &trans
                                &trans                    &trans  &trans  &trans    &kp SPACE  &kp N0          &kp LS(PLUS)  &kp DOT
             >;
         };
@@ -258,11 +283,11 @@
 
         programming {
             bindings = <
-&trans    &trans  &trans  &trans  &kp LS(LC(LG(NUMBER_4)))  &trans                           &php_open      &trans        &trans          &trans      &trans         &kp BACKSPACE
-&trans    &trans  &trans  &trans  &kp LS(LG(R))             &trans                           &function      &kp LS(LBRC)  &kp LS(RBRC)    &trans      &trans         &kp PIPE
-&kp CAPS  &trans  &trans  &trans  &trans                    &trans                           &kp LS(DLLR)   &kp LS(LPAR)  &kp LS(RPAR)    &trans      &kp SEMICOLON  &kp SQT
-&trans    &trans  &trans  &trans  &trans                    &trans  &trans    &double_arrow  &single_arrow  &kp LBKT      &kp RBKT        &kp LS(LT)  &kp LS(GT)     &kp EQUAL
-                          &trans  &trans                    &trans  &trans    &kp SPACE      &kp ENTER      &kp UP_ARROW  &kp DOWN_ARROW
+&trans    &trans  &trans  &trans    &kp LS(LC(LG(NUMBER_4)))  &trans                           &php_open      &trans        &trans        &trans      &trans         &kp BACKSPACE
+&trans    &trans  &trans  &trans    &kp LS(LG(R))             &trans                           &function      &kp LS(LBRC)  &kp LS(RBRC)  &trans      &trans         &kp PIPE
+&kp CAPS  &trans  &trans  &trans    &trans                    &trans                           &kp LS(DLLR)   &kp LS(LPAR)  &kp LS(RPAR)  &trans      &kp SEMICOLON  &kp SQT
+&trans    &trans  &trans  &trans    &trans                    &trans  &trans    &double_arrow  &single_arrow  &kp LBKT      &kp RBKT      &kp LS(LT)  &kp LS(GT)     &kp EQUAL
+                          &left_up  &right_down               &trans  &trans    &kp SPACE      &kp ENTER      &left_up      &right_down
             >;
         };
 
@@ -276,11 +301,11 @@
 
             display-name = "Lower";
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans     &trans           &trans    &trans    &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans     &trans           &trans    &trans    &to 0
 &kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                          &kp F7     &kp F8     &kp F9           &kp F10   &kp F11   &kp F12
 &kp GRAVE   &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PRCNT                       &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp TILDE
 &trans      &trans        &trans        &trans        &trans        &trans        &trans    &trans  &trans     &kp MINUS  &kp KP_PLUS      &kp LBRC  &kp RBRC  &kp PIPE
-                                        &trans        &trans        &trans        &trans    &trans  &trans     &trans     &trans
+                                        &trans        &trans        &trans        &to 0     &to 0   &trans     &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
