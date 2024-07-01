@@ -61,40 +61,105 @@
             layers = <0>;
         };
 
-        delete {
-            bindings = <&kp DEL>;
+        lh_backspace_delete {
+            bindings = <&backspace_delete>;
             key-positions = <10 11>;
             layers = <0>;
         };
 
         lh_6 {
             bindings = <&kp NUMBER_6>;
-            key-positions = <5 4>;
+            key-positions = <16 17>;
             layers = <0>;
         };
 
         lh_7 {
             bindings = <&kp N7>;
-            key-positions = <4 3>;
+            key-positions = <16 15>;
             layers = <0>;
         };
 
         lh_8 {
             bindings = <&kp N8>;
-            key-positions = <3 2>;
+            key-positions = <14 15>;
             layers = <0>;
         };
 
         lh_9 {
             bindings = <&kp N9>;
-            key-positions = <2 1>;
+            key-positions = <14 13>;
             layers = <0>;
         };
 
         lh_0 {
             bindings = <&kp N0>;
-            key-positions = <1 0>;
+            key-positions = <13 12>;
             layers = <0>;
+        };
+
+        rh_pinky_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <35 34>;
+        };
+
+        lh_open_paren {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <30 31>;
+        };
+
+        lh_close_paren {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <31 32>;
+        };
+
+        lh_open_brace {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <19 18>;
+        };
+
+        lh_close_brace {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <19 20>;
+        };
+
+        lh_open_bracket {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <44 45>;
+        };
+
+        lh_close_bracket {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <45 46>;
+        };
+
+        lh_single_arrow {
+            bindings = <&single_arrow>;
+            key-positions = <44 43>;
+        };
+
+        lh_double_arrow {
+            bindings = <&double_arrow>;
+            key-positions = <43 30>;
+        };
+
+        rh_caret {
+            bindings = <&kp CARET>;
+            key-positions = <18 30>;
+        };
+
+        lh_dollar {
+            bindings = <&kp DLLR>;
+            key-positions = <16 28>;
+        };
+
+        lh_exclamation {
+            bindings = <&kp EXCL>;
+            key-positions = <13 25>;
+        };
+
+        lh_percent {
+            bindings = <&kp PRCNT>;
+            key-positions = <29 17>;
         };
     };
 
