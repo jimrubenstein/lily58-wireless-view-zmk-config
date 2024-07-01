@@ -9,6 +9,36 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    macros {
+        php_open: php_open {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LT &kp QMARK &kp P &kp H &kp P &kp RET>;
+            label = "PHP_OPEN";
+        };
+
+        single_arrow: single_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS &kp GT>;
+            label = "SINGLE_ARROW";
+        };
+
+        double_arrow: double_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp GT>;
+            label = "DOUBLE_ARROW";
+        };
+
+        function: function {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F &kp U &kp N &kp C &kp T &kp I &kp O &kp N &kp LPAR &kp RPAR &kp LEFT_ARROW>;
+            label = "FUNCTION";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -54,11 +84,11 @@
 
         programming {
             bindings = <
-&trans  &trans  &trans  &trans  &trans         &trans                       &trans        &trans        &trans        &trans      &trans         &kp BACKSPACE
-&trans  &trans  &trans  &trans  &kp LA(LS(R))  &trans                       &trans        &kp LS(LBRC)  &kp LS(RBRC)  &trans      &trans         &kp PIPE
-&trans  &trans  &trans  &trans  &trans         &trans                       &kp LS(DLLR)  &kp LS(LPAR)  &kp LS(RPAR)  &trans      &kp SEMICOLON  &kp SQT
-&trans  &trans  &trans  &trans  &trans         &trans  &trans    &trans     &trans        &kp LBKT      &kp RBKT      &kp LS(LT)  &kp LS(GT)     &kp EQUAL
-                        &trans  &trans         &trans  &trans    &kp SPACE  &kp ENTER     &trans        &trans
+&trans  &trans  &trans  &trans  &trans         &trans                           &php_open      &trans        &trans        &trans      &trans         &kp BACKSPACE
+&trans  &trans  &trans  &trans  &kp LA(LS(R))  &trans                           &function      &kp LS(LBRC)  &kp LS(RBRC)  &trans      &trans         &kp PIPE
+&trans  &trans  &trans  &trans  &trans         &trans                           &kp LS(DLLR)   &kp LS(LPAR)  &kp LS(RPAR)  &trans      &kp SEMICOLON  &kp SQT
+&trans  &trans  &trans  &trans  &trans         &trans  &trans    &double_arrow  &single_arrow  &kp LBKT      &kp RBKT      &kp LS(LT)  &kp LS(GT)     &kp EQUAL
+                        &trans  &trans         &trans  &trans    &kp SPACE      &kp ENTER      &trans        &trans
             >;
         };
 
