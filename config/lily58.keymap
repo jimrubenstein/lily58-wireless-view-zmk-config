@@ -283,11 +283,11 @@
 
         programming {
             bindings = <
-&trans    &trans  &trans  &trans    &kp LS(LC(LG(NUMBER_4)))  &trans                           &php_open      &trans        &trans        &trans      &trans         &kp BACKSPACE
-&trans    &trans  &trans  &trans    &kp LS(LG(R))             &trans                           &function      &kp LS(LBRC)  &kp LS(RBRC)  &trans      &trans         &kp PIPE
-&kp CAPS  &trans  &trans  &trans    &trans                    &trans                           &kp LS(DLLR)   &kp LS(LPAR)  &kp LS(RPAR)  &trans      &kp SEMICOLON  &kp SQT
-&trans    &trans  &trans  &trans    &trans                    &trans  &trans    &double_arrow  &single_arrow  &kp LBKT      &kp RBKT      &kp LS(LT)  &kp LS(GT)     &kp EQUAL
-                          &left_up  &right_down               &trans  &trans    &kp SPACE      &kp ENTER      &left_up      &right_down
+&trans       &kp LG(GRAVE)  &trans  &trans    &kp LS(LC(LG(NUMBER_4)))  &trans                           &php_open      &trans        &trans        &trans      &trans         &kp BACKSPACE
+&kp LG(TAB)  &trans         &trans  &trans    &kp LS(LG(R))             &trans                           &function      &kp LS(LBRC)  &kp LS(RBRC)  &trans      &trans         &kp PIPE
+&kp CAPS     &trans         &trans  &trans    &trans                    &trans                           &kp LS(DLLR)   &kp LS(LPAR)  &kp LS(RPAR)  &trans      &kp SEMICOLON  &kp SQT
+&trans       &trans         &trans  &trans    &trans                    &trans  &trans    &double_arrow  &single_arrow  &kp LBKT      &kp RBKT      &kp LS(LT)  &kp LS(GT)     &kp EQUAL
+                                    &left_up  &right_down               &trans  &trans    &kp SPACE      &kp ENTER      &left_up      &right_down
             >;
         };
 
