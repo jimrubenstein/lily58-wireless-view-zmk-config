@@ -137,6 +137,11 @@
             bindings = <&kp PRCNT>;
             key-positions = <29 17>;
         };
+
+        backslash_pipe {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <23 35>;
+        };
     };
 
     behaviors {
