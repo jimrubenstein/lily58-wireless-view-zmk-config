@@ -303,11 +303,11 @@
 
         navigation {
             bindings = <
-&kp LC(LG(Q))     &trans    &trans    &trans     &kp LS(LC(LG(NUMBER_4)))  &kp HOME                               &trans  &trans  &trans  &trans  &trans  &to 5
-&trans            &trans    &kp UP    &trans     &trans                    &kp PAGE_UP                            &trans  &trans  &trans  &trans  &trans  &trans
-&kp LEFT_CONTROL  &kp LEFT  &kp DOWN  &kp RIGHT  &trans                    &kp PAGE_DOWN                          &trans  &trans  &trans  &trans  &trans  &trans
-&kp LEFT_SHIFT    &trans    &trans    &trans     &trans                    &kp END        &kp LSHIFT      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                      &trans     &kp LCTRL                 &kp LALT       &kp LEFT_GUI    &trans  &trans  &trans  &trans
+&kp LC(LG(Q))     &trans        &trans    &trans         &kp LS(LC(LG(NUMBER_4)))  &kp HOME                               &trans  &trans  &trans  &trans  &trans  &to 5
+&trans            &trans        &kp UP    &trans         &trans                    &kp PAGE_UP                            &trans  &trans  &trans  &trans  &trans  &trans
+&kp LEFT_CONTROL  &kp LEFT      &kp DOWN  &kp RIGHT      &trans                    &kp PAGE_DOWN                          &trans  &trans  &trans  &trans  &trans  &trans
+&kp LEFT_SHIFT    &kp LG(LEFT)  &trans    &kp LG(RIGHT)  &trans                    &kp END        &kp LSHIFT      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                          &trans         &kp LCTRL                 &kp LALT       &kp LEFT_GUI    &trans  &trans  &trans  &trans
             >;
         };
 
