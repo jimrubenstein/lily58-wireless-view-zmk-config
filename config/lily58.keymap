@@ -184,12 +184,12 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <225>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
             flavor = "balanced";
             hold-trigger-key-positions = <6 18 30 44 43 54 55 56 57 7 8 9 19 20 21 31 32 33 45 46 47 10 11 22 23 34 35 48 49>;
             hold-trigger-on-release;
-            require-prior-idle-ms = <120>;
+            require-prior-idle-ms = <135>;
         };
 
         rightHand_hr_mt_shift: rightHand_hr_mt_shift {
@@ -198,11 +198,11 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <225>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
             flavor = "balanced";
             hold-trigger-on-release;
-            require-prior-idle-ms = <120>;
+            require-prior-idle-ms = <135>;
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 42 50 51 52 53>;
         };
 
@@ -293,11 +293,11 @@
 
         numbers_media {
             bindings = <
-&kp LC(LG(Q))  &trans  &trans  &kp LC(LS(LG(NUMBER_4)))  &trans  &trans                       &kp C_PREVIOUS  &kp C_NEXT    &kp C_PP  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp BSPC
-&trans         &trans  &trans  &trans                    &trans  &trans                       &kp LS(STAR)    &kp N7        &kp N8    &kp N9             &trans           &trans
-&trans         &trans  &trans  &trans                    &trans  &trans                       &kp FSLH        &kp N4        &kp N5    &kp N6             &kp RET          &trans
-&trans         &trans  &trans  &trans                    &trans  &trans  &trans    &to 0      &kp MINUS       &kp N1        &kp N2    &kp N3             &kp EQUAL        &trans
-                               &trans                    &trans  &trans  &trans    &kp SPACE  &kp N0          &kp LS(PLUS)  &kp DOT
+&kp LC(LG(Q))  &trans  &trans  &kp LC(LS(LG(NUMBER_4)))  &trans  &trans                       &kp C_PREVIOUS  &kp C_NEXT  &kp C_PP  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp BSPC
+&trans         &trans  &trans  &trans                    &trans  &trans                       &kp LS(C_MUTE)  &kp N7      &kp N8    &kp N9             &trans           &trans
+&trans         &trans  &trans  &trans                    &trans  &trans                       &kp PLUS        &kp N4      &kp N5    &kp N6             &kp STAR         &kp ENTER
+&trans         &trans  &trans  &trans                    &trans  &trans  &trans    &to 0      &kp MINUS       &kp N1      &kp N2    &kp N3             &kp SLASH        &kp ENTER
+                               &trans                    &trans  &trans  &trans    &kp SPACE  &kp N0          &kp N0      &kp DOT
             >;
         };
 
