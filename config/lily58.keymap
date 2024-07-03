@@ -78,44 +78,19 @@
             key-positions = <35 34>;
         };
 
-        rh_open_brace {
-            bindings = <&kp LEFT_BRACE>;
-            key-positions = <20 32>;
-        };
-
-        rh_close_brace {
-            bindings = <&kp RIGHT_BRACE>;
-            key-positions = <32 46>;
-        };
-
-        rh_open_paren {
-            bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <18 30>;
-        };
-
-        rh_close_paren {
-            bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <19 31>;
-        };
-
-        lh_open_bracket {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <30 44>;
-        };
-
-        lh_close_bracket {
-            bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <31 45>;
-        };
-
-        lh_single_arrow {
-            bindings = <&single_arrow>;
+        rh_open_curly_brackets {
+            bindings = <&morph_curly_brackets>;
             key-positions = <18 19>;
         };
 
-        lh_double_arrow {
-            bindings = <&double_arrow>;
+        rh_open_paren {
+            bindings = <&morph_parens>;
             key-positions = <30 31>;
+        };
+
+        lh_open_sqr_bracket {
+            bindings = <&morph_sqr_brackets>;
+            key-positions = <30 44>;
         };
 
         rh_caret {
@@ -128,24 +103,14 @@
             key-positions = <16 28>;
         };
 
-        lh_exclamation {
-            bindings = <&kp EXCL>;
-            key-positions = <13 25>;
-        };
-
-        lh_percent {
-            bindings = <&kp PRCNT>;
-            key-positions = <29 17>;
-        };
-
         backslash_pipe {
             bindings = <&kp BACKSLASH>;
             key-positions = <23 35>;
         };
 
-        rh_dollar {
-            bindings = <&kp DLLR>;
-            key-positions = <44 45>;
+        rh_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <34 35>;
         };
     };
 
@@ -247,14 +212,70 @@
             bindings = <&mo 2>, <&mo 2>, <&to 2>;
         };
 
-        th_layer_backspace_del: th_layer_backspace_del {
+        th_layer_shift_capsword: th_layer_shift_capsword {
             compatible = "zmk,behavior-hold-tap";
-            label = "TH_LAYER_BACKSPACE_DEL";
-            bindings = <&mo>, <&backspace_delete>;
+            label = "TH_LAYER_SHIFT_CAPSWORD";
+            bindings = <&mo>, <&td_lshift_capsword>;
 
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
+        };
+
+        morph_sing_dbl_arrow: morph_sing_dbl_arrow {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MORPH_SING_DBL_ARROW";
+            bindings = <&single_arrow>, <&double_arrow>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        th_arrow_layer: th_arrow_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TH_ARROW_LAYER";
+            bindings = <&mo>, <&morph_sing_dbl_arrow>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <100>;
+            flavor = "tap-preferred";
+        };
+
+        morph_parens: morph_parens {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MORPH_PARENS";
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        morph_sqr_brackets: morph_sqr_brackets {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MORPH_SQR_BRACKETS";
+            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        morph_curly_brackets: morph_curly_brackets {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MORPH_CURLY_BRACKETS";
+            bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        tap_skshift_td_cword_hkpshift: tap_skshift_td_cword_hkpshift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAP_SKSHIFT_TD_CWORD_HKPSHIFT";
+            bindings = <&kp>, <&td_lshift_capsword>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <179>;
+            flavor = "tap-preferred";
         };
     };
 
@@ -271,11 +292,11 @@
 
             display-name = "Base";
             bindings = <
-&kp ESC              &kp N1                      &kp N2                   &kp N3                      &kp N4                          &kp N5                                                               &kp N6     &kp N7                                &kp N8                   &kp N9                    &kp N0                                &kp EQUAL
-&kp TAB              &kp Q                       &kp W                    &kp E                       &kp R                           &kp T                                                                &kp Y      &kp U                                 &kp I                    &kp O                     &kp P                                 &kp MINUS
-&kp LCTRL            &leftHand_hr_mt LEFT_ALT A  &leftHand_hr_mt LCTRL S  &leftHand_hr_mt LEFT_GUI D  &leftHand_hr_mt_shift LSHIFT F  &kp G                                                                &kp H      &rightHand_hr_mt_shift RIGHT_SHIFT J  &rightHand_hr_mt RGUI K  &rightHand_hr_mt RCTRL L  &rightHand_hr_mt RIGHT_ALT SEMICOLON  &kp SQT
-&td_lshift_capsword  &kp Z                       &kp X                    &kp C                       &kp V                           &kp B                        &tap_dance_toggle_numbers    &mo 3      &kp N      &kp M                                 &kp COMMA                &kp DOT                   &kp FSLH                              &td_lshift_capsword
-                                                                          &kp LALT                    &kp LGUI                        &th_layer_backspace_del 4 0  &backspace_delete            &kp SPACE  &kp ENTER  &left_up                              &right_down
+&kp ESC                                      &kp N1                      &kp N2                   &kp N3                      &kp N4                          &kp N5                                                                          &kp N6     &kp N7                                &kp N8                   &kp N9                    &kp N0                                &kp EQUAL
+&kp TAB                                      &kp Q                       &kp W                    &kp E                       &kp R                           &kp T                                                                           &kp Y      &kp U                                 &kp I                    &kp O                     &kp P                                 &kp MINUS
+&kp LCTRL                                    &leftHand_hr_mt LEFT_ALT A  &leftHand_hr_mt LCTRL S  &leftHand_hr_mt LEFT_GUI D  &leftHand_hr_mt_shift LSHIFT F  &kp G                                                                           &kp H      &rightHand_hr_mt_shift RIGHT_SHIFT J  &rightHand_hr_mt RGUI K  &rightHand_hr_mt RCTRL L  &rightHand_hr_mt RIGHT_ALT SEMICOLON  &kp SQT
+&tap_skshift_td_cword_hkpshift LEFT_SHIFT 0  &kp Z                       &kp X                    &kp C                       &kp V                           &kp B                         &tap_dance_toggle_numbers    &th_arrow_layer 3 0  &kp N      &kp M                                 &kp COMMA                &kp DOT                   &kp FSLH                              &tap_skshift_td_cword_hkpshift RSHFT 0
+                                                                                                  &kp LGUI                    &sk LSHIFT                      &th_layer_shift_capsword 4 0  &backspace_delete            &kp SPACE            &kp ENTER  &left_up                              &right_down
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -303,11 +324,11 @@
 
         navigation {
             bindings = <
-&kp LC(LG(Q))     &trans        &trans    &trans         &kp LS(LC(LG(NUMBER_4)))  &kp HOME                               &trans  &trans  &trans  &trans  &trans  &to 5
-&trans            &trans        &kp UP    &trans         &trans                    &kp PAGE_UP                            &trans  &trans  &trans  &trans  &trans  &trans
-&kp LEFT_CONTROL  &kp LEFT      &kp DOWN  &kp RIGHT      &trans                    &kp PAGE_DOWN                          &trans  &trans  &trans  &trans  &trans  &trans
-&kp LEFT_SHIFT    &kp LG(LEFT)  &trans    &kp LG(RIGHT)  &trans                    &kp END        &kp LSHIFT      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                          &trans         &kp LCTRL                 &kp LALT       &kp LEFT_GUI    &trans  &trans  &trans  &trans
+&kp LC(LG(Q))   &trans        &trans    &trans          &kp LS(LC(LG(NUMBER_4)))  &kp HOME                               &trans  &trans  &trans  &trans  &trans  &to 5
+&trans          &trans        &kp UP    &trans          &trans                    &kp PAGE_UP                            &trans  &trans  &trans  &trans  &trans  &trans
+&kp LCTRL       &kp LEFT      &kp DOWN  &kp RIGHT       &trans                    &kp PAGE_DOWN                          &trans  &trans  &trans  &trans  &trans  &trans
+&kp LEFT_SHIFT  &kp LG(LEFT)  &trans    &kp LG(RIGHT)   &trans                    &kp END        &kp LSHIFT      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                        &kp LEFT_SHIFT  &kp LCTRL                 &kp LALT       &kp LEFT_GUI    &trans  &trans  &trans  &trans
             >;
         };
 
@@ -359,6 +380,16 @@
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        layer_7 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+            >;
         };
     };
 };
