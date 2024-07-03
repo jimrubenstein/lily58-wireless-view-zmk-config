@@ -68,7 +68,7 @@
         template_output: template_output {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RBKT &kp RBKT &kp SPACE &kp SPACE &kp RBRC &kp RBRC &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT>;
+            bindings = <&kp LEFT_BRACE &kp LEFT_BRACE &kp SPACE &kp SPACE &kp RBRC &kp RBRC &kp LEFT_ARROW &kp LEFT_ARROW &kp LEFT>;
             label = "TEMPLATE_OUTPUT";
         };
     };
