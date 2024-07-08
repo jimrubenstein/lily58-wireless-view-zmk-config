@@ -379,7 +379,7 @@
             bindings = <
 &trans          &kp LG(GRAVE)  &trans     &trans     &kp LS(LC(LG(NUMBER_4)))  &trans                            &php_open_close   &php_echo_close       &trans                 &trans                &trans            &kp BACKSPACE
 &kp LG(TAB)     &trans         &trans     &trans     &kp LS(LG(R))             &trans                            &function         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans                &trans            &kp PIPE
-&kp CAPS        &trans         &trans     &trans     &trans                    &trans                            &kp LEFT_BRACE    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp RIGHT_BRACE       &kp SEMICOLON     &kp NON_US_BACKSLASH
+&kp CAPS        &kp LG(A)      &trans     &kp LG(D)  &trans                    &trans                            &kp LEFT_BRACE    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp RIGHT_BRACE       &kp SEMICOLON     &kp NON_US_BACKSLASH
 &kp LEFT_SHIFT  &trans         &kp LG(X)  &kp LG(C)  &kp LG(V)                 &trans       &trans    &trans     &template_output  &trans                &kp LS(LESS_THAN)      &kp LS(GREATER_THAN)  &kp LS(QUESTION)  &kp ENTER
                                           &left_up   &trans                    &right_down  &trans    &kp SPACE  &trans            &left_up              &right_down
             >;
