@@ -232,7 +232,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_TOGGLE_NUMBERS";
             #binding-cells = <0>;
-            bindings = <&mo 2>, <&mo 2>, <&to 2>;
+            bindings = <&mo 1>, <&mo 1>, <&to 1>;
 
             tapping-term-ms = <275>;
         };
@@ -338,40 +338,30 @@
 &kp ESC              &kp N1                      &kp N2                   &kp N3                      &kp N4                          &kp N5                                                        &kp N6     &kp N7                                &kp N8                   &kp N9                    &kp N0                                &kp EQUAL
 &kp TAB              &kp Q                       &kp W                    &kp E                       &kp R                           &kp T                                                         &kp Y      &kp U                                 &kp I                    &kp O                     &kp P                                 &kp MINUS
 &kp LCTRL            &leftHand_hr_mt LEFT_ALT A  &leftHand_hr_mt LCTRL S  &leftHand_hr_mt LEFT_GUI D  &leftHand_hr_mt_shift LSHIFT F  &kp G                                                         &kp H      &rightHand_hr_mt_shift RIGHT_SHIFT J  &rightHand_hr_mt RGUI K  &rightHand_hr_mt RCTRL L  &rightHand_hr_mt RIGHT_ALT SEMICOLON  &kp SQT
-&td_lshift_capsword  &kp Z                       &kp X                    &kp C                       &kp V                           &kp B       &tap_dance_toggle_numbers    &th_arrow_layer 3 0  &kp N      &kp M                                 &kp COMMA                &kp DOT                   &kp FSLH                              &td_lshift_capsword
-                                                                          &kp LGUI                    &mo 4                           &kp LSHIFT  &backspace_delete            &kp SPACE            &kp ENTER  &left_up                              &right_down
+&td_lshift_capsword  &kp Z                       &kp X                    &kp C                       &kp V                           &kp B       &tap_dance_toggle_numbers    &th_arrow_layer 2 0  &kp N      &kp M                                 &kp COMMA                &kp DOT                   &kp FSLH                              &td_lshift_capsword
+                                                                          &kp LGUI                    &mo 3                           &kp LSHIFT  &backspace_delete            &kp SPACE            &kp ENTER  &left_up                              &right_down
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        cmd_layer {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
-            >;
-        };
-
         numbers_media {
             bindings = <
-&kp LC(LG(Q))  &trans  &trans  &kp LC(LS(LG(NUMBER_4)))  &trans  &trans                       &kp C_PREVIOUS  &kp C_NEXT  &kp C_PP  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp BSPC
-&trans         &trans  &trans  &trans                    &trans  &trans                       &kp LS(C_MUTE)  &kp N7      &kp N8    &kp N9             &trans           &trans
-&trans         &trans  &trans  &trans                    &trans  &trans                       &kp PLUS        &kp N4      &kp N5    &kp N6             &kp STAR         &kp ENTER
-&trans         &trans  &trans  &trans                    &trans  &trans  &trans    &to 0      &kp MINUS       &kp N1      &kp N2    &kp N3             &kp SLASH        &kp ENTER
-                               &trans                    &trans  &trans  &trans    &kp SPACE  &kp N0          &kp N0      &kp DOT
+&kp LC(LG(Q))  &trans  &trans  &kp LC(LS(LG(NUMBER_4)))  &trans  &kp LG(F12)                       &kp C_PREVIOUS  &kp C_NEXT  &kp C_PP  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp BSPC
+&trans         &trans  &trans  &trans                    &trans  &trans                            &kp LS(C_MUTE)  &kp N7      &kp N8    &kp N9             &trans           &trans
+&trans         &trans  &trans  &trans                    &trans  &trans                            &kp PLUS        &kp N4      &kp N5    &kp N6             &kp STAR         &kp ENTER
+&trans         &trans  &trans  &trans                    &trans  &trans       &trans    &to 0      &kp MINUS       &kp N1      &kp N2    &kp N3             &kp SLASH        &kp ENTER
+                               &trans                    &trans  &trans       &trans    &kp SPACE  &kp N0          &kp N0      &kp DOT
             >;
         };
 
         navigation {
             bindings = <
-&kp LC(LG(Q))   &trans        &trans    &trans          &kp LS(LC(LG(NUMBER_4)))  &kp HOME                               &trans  &trans  &trans  &trans  &trans  &to 5
-&trans          &trans        &kp UP    &trans          &trans                    &kp PAGE_UP                            &trans  &trans  &trans  &trans  &trans  &trans
-&kp LCTRL       &kp LEFT      &kp DOWN  &kp RIGHT       &trans                    &kp PAGE_DOWN                          &trans  &trans  &trans  &trans  &trans  &trans
-&kp LEFT_SHIFT  &kp LG(LEFT)  &trans    &kp LG(RIGHT)   &trans                    &kp END        &kp LSHIFT      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                        &kp LEFT_SHIFT  &kp LCTRL                 &kp LALT       &kp LEFT_GUI    &trans  &trans  &trans  &trans
+&kp LC(LG(Q))   &trans        &trans    &trans          &kp LS(LC(LG(NUMBER_4)))  &kp HOME                                       &trans  &trans      &trans         &trans     &trans         &to 4
+&trans          &trans        &kp UP    &trans          &trans                    &kp PAGE_UP                                    &trans  &trans      &trans         &trans     &trans         &trans
+&kp LEFT_ALT    &kp LEFT      &kp DOWN  &kp RIGHT       &trans                    &kp PAGE_DOWN                                  &trans  &kp RSHIFT  &kp RIGHT_GUI  &kp RCTRL  &kp RIGHT_ALT  &trans
+&kp LEFT_SHIFT  &kp LG(LEFT)  &trans    &kp LG(RIGHT)   &trans                    &kp END        &kp LSHIFT           &trans     &trans  &trans      &trans         &trans     &trans         &trans
+                                        &kp LEFT_SHIFT  &kp LCTRL                 &kp LALT       &backspace_delete    &kp SPACE  &trans  &trans      &trans
             >;
         };
 
