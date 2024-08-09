@@ -94,29 +94,24 @@
             layers = <0>;
         };
 
-        rh_pinky_enter {
-            bindings = <&kp ENTER>;
-            key-positions = <35 34>;
-        };
-
         rh_open_curly_brackets {
-            bindings = <&morph_curly_brackets>;
+            bindings = <&td_morph_curly_brkt>;
             key-positions = <19 31>;
         };
 
         rh_open_paren {
-            bindings = <&morph_parens>;
+            bindings = <&td_morph_parens>;
             key-positions = <30 31>;
         };
 
         lh_open_sqr_bracket {
-            bindings = <&morph_sqr_brackets>;
+            bindings = <&td_morph_sqr_brkt>;
             key-positions = <44 45>;
         };
 
         rh_caret {
             bindings = <&kp CARET>;
-            key-positions = <18 6>;
+            key-positions = <18 30>;
         };
 
         lh_dollar {
@@ -129,9 +124,9 @@
             key-positions = <23 35>;
         };
 
-        rh_enter {
-            bindings = <&kp ENTER>;
-            key-positions = <34 35>;
+        pcnt {
+            bindings = <&kp PERCENT>;
+            key-positions = <29 17>;
         };
     };
 
@@ -328,6 +323,27 @@
             bindings = <&kp LSHIFT>, <&kp CAPSLOCK>;
 
             tapping-term-ms = <230>;
+        };
+
+        td_morph_sqr_brkt: td_morph_sqr_brkt {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MORPH_SQR_BRKT";
+            #binding-cells = <0>;
+            bindings = <&morph_sqr_brackets>, <&kp RIGHT_BRACKET>;
+        };
+
+        td_morph_curly_brkt: td_morph_curly_brkt {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MORPH_CURLY_BRKT";
+            #binding-cells = <0>;
+            bindings = <&morph_curly_brackets>, <&kp RIGHT_BRACE>;
+        };
+
+        td_morph_parens: td_morph_parens {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MORPH_PARENS";
+            #binding-cells = <0>;
+            bindings = <&morph_parens>, <&kp RIGHT_PARENTHESIS>;
         };
     };
 
