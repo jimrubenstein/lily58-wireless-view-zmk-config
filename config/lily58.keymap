@@ -90,7 +90,7 @@
 
         lh_6 {
             bindings = <&kp NUMBER_6>;
-            key-positions = <4 5>;
+            key-positions = <17 16>;
             layers = <0>;
         };
 
@@ -121,7 +121,7 @@
 
         lh_dollar {
             bindings = <&kp DLLR>;
-            key-positions = <16 17>;
+            key-positions = <16 28>;
         };
 
         backslash_pipe {
