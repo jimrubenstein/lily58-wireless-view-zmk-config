@@ -320,6 +320,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        tap_dance_capslock: tap_dance_capslock {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_CAPSLOCK";
+            #binding-cells = <0>;
+            bindings = <&kp LSHIFT>, <&kp CAPSLOCK>;
+
+            tapping-term-ms = <230>;
+        };
     };
 
     keymap {
@@ -338,7 +347,7 @@
 &kp ESC              &kp N1                      &kp N2                   &kp N3                      &kp N4                          &kp N5                                                        &kp N6             &kp N7                                &kp N8                   &kp N9                    &kp N0                                &kp EQUAL
 &kp TAB              &kp Q                       &kp W                    &kp E                       &kp R                           &kp T                                                         &kp Y              &kp U                                 &kp I                    &kp O                     &kp P                                 &kp MINUS
 &kp LCTRL            &leftHand_hr_mt LEFT_ALT A  &leftHand_hr_mt LCTRL S  &leftHand_hr_mt LEFT_GUI D  &leftHand_hr_mt_shift LSHIFT F  &kp G                                                         &kp H              &rightHand_hr_mt_shift RIGHT_SHIFT J  &rightHand_hr_mt RGUI K  &rightHand_hr_mt RCTRL L  &rightHand_hr_mt RIGHT_ALT SEMICOLON  &kp SQT
-&td_lshift_capsword  &kp Z                       &kp X                    &kp C                       &kp V                           &kp B       &tap_dance_toggle_numbers    &th_arrow_layer 2 0  &kp N              &kp M                                 &kp COMMA                &kp DOT                   &kp FSLH                              &kp ENTER
+&tap_dance_capslock  &kp Z                       &kp X                    &kp C                       &kp V                           &kp B       &tap_dance_toggle_numbers    &th_arrow_layer 2 0  &kp N              &kp M                                 &kp COMMA                &kp DOT                   &kp FSLH                              &kp ENTER
                                                                           &left_up                    &mo 3                           &kp LSHIFT  &kp SPACE                    &kp SPACE            &backspace_delete  &kp ENTER                             &right_down
             >;
 
@@ -347,31 +356,31 @@
 
         numbers_media {
             bindings = <
-&kp LC(LG(Q))  &trans  &trans  &kp LC(LS(LG(NUMBER_4)))  &trans  &kp LC(LA(LS(F12)))                       &kp C_PREVIOUS  &kp C_NEXT  &kp C_PP  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp BSPC
-&trans         &trans  &trans  &trans                    &trans  &trans                                    &kp LS(C_MUTE)  &kp N7      &kp N8    &kp N9             &trans           &trans
-&trans         &trans  &trans  &trans                    &trans  &trans                                    &kp PLUS        &kp N4      &kp N5    &kp N6             &kp STAR         &kp ENTER
-&trans         &trans  &trans  &trans                    &trans  &trans               &trans    &to 0      &kp MINUS       &kp N1      &kp N2    &kp N3             &kp SLASH        &kp ENTER
-                               &trans                    &trans  &trans               &trans    &kp SPACE  &kp N0          &kp N0      &kp DOT
+&kp LC(LG(Q))  &trans  &trans  &trans  &trans  &kp LC(LA(LS(F12)))                               &kp C_PREVIOUS  &kp C_NEXT  &kp C_PP  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp BSPC
+&trans         &trans  &trans  &trans  &trans  &trans                                            &kp LS(C_MUTE)  &kp N7      &kp N8    &kp N9             &trans           &trans
+&trans         &trans  &trans  &trans  &trans  &trans                                            &kp PLUS        &kp N4      &kp N5    &kp N6             &kp STAR         &kp ENTER
+&trans         &trans  &trans  &trans  &trans  &trans               &trans    &to 0              &kp MINUS       &kp N1      &kp N2    &kp N3             &kp SLASH        &kp ENTER
+                               &trans  &trans  &trans               &trans    &backspace_delete  &kp N0          &kp N0      &kp DOT
             >;
         };
 
         navigation {
             bindings = <
-&kp LC(LG(Q))   &trans        &trans    &trans          &kp LS(LC(LG(NUMBER_4)))  &kp HOME                                       &trans  &trans      &trans         &trans     &trans         &to 4
-&trans          &trans        &kp UP    &trans          &trans                    &kp PAGE_UP                                    &trans  &trans      &trans         &trans     &trans         &trans
-&kp LEFT_ALT    &kp LEFT      &kp DOWN  &kp RIGHT       &trans                    &kp PAGE_DOWN                                  &trans  &kp RSHIFT  &kp RIGHT_GUI  &kp RCTRL  &kp RIGHT_ALT  &trans
-&kp LEFT_SHIFT  &kp LG(LEFT)  &trans    &kp LG(RIGHT)   &trans                    &kp END        &kp LSHIFT           &trans     &trans  &trans      &trans         &trans     &trans         &trans
-                                        &kp LEFT_SHIFT  &kp LCTRL                 &kp LALT       &backspace_delete    &kp SPACE  &trans  &trans      &trans
+&kp LC(LG(Q))   &trans        &trans    &trans                  &trans                   &kp HOME                                       &trans  &trans      &trans         &trans     &trans         &to 4
+&trans          &trans        &kp UP    &kp LS(LG(LEFT_BRACE))  &kp LG(LS(RIGHT_BRACE))  &kp PAGE_UP                                    &trans  &trans      &trans         &trans     &trans         &trans
+&trans          &kp LEFT      &kp DOWN  &kp RIGHT               &trans                   &kp PAGE_DOWN                                  &trans  &kp RSHIFT  &kp RIGHT_GUI  &kp RCTRL  &kp RIGHT_ALT  &trans
+&kp LEFT_SHIFT  &kp LG(LEFT)  &trans    &kp LG(RIGHT)           &trans                   &kp END        &kp LSHIFT           &trans     &trans  &trans      &trans         &trans     &trans         &trans
+                                        &trans                  &trans                   &trans         &backspace_delete    &kp SPACE  &trans  &trans      &trans
             >;
         };
 
         programming {
             bindings = <
-&trans          &kp LG(GRAVE)  &trans     &trans     &kp LS(LC(LG(NUMBER_4)))  &trans                            &php_open_close   &php_echo_close       &trans                 &trans                &trans            &kp BACKSPACE
-&kp LG(TAB)     &trans         &trans     &trans     &kp LS(LG(R))             &trans                            &function         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans                &trans            &kp PIPE
-&kp CAPS        &kp LG(A)      &trans     &kp LG(D)  &trans                    &trans                            &kp LEFT_BRACE    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp RIGHT_BRACE       &kp SEMICOLON     &kp NON_US_BACKSLASH
-&kp LEFT_SHIFT  &trans         &kp LG(X)  &kp LG(C)  &kp LG(V)                 &trans       &trans    &trans     &template_output  &trans                &kp LS(LESS_THAN)      &kp LS(GREATER_THAN)  &kp LS(QUESTION)  &kp ENTER
-                                          &left_up   &trans                    &right_down  &trans    &kp SPACE  &trans            &left_up              &right_down
+&kp LS(LG(GRAVE))  &kp LG(GRAVE)  &trans     &trans     &kp LS(LC(LG(NUMBER_4)))  &trans                         &php_open_close   &php_echo_close       &trans                 &trans                &trans            &kp BACKSPACE
+&trans             &trans         &trans     &trans     &kp LS(LG(R))             &kp RG(T)                      &function         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans                &trans            &kp PIPE
+&kp CAPS           &kp LG(A)      &trans     &kp LG(D)  &trans                    &trans                         &kp LEFT_BRACE    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp RIGHT_BRACE       &kp SEMICOLON     &kp NON_US_BACKSLASH
+&trans             &trans         &kp LG(X)  &kp LG(C)  &kp LG(V)                 &trans       &trans    &trans  &template_output  &trans                &kp LS(LESS_THAN)      &kp LS(GREATER_THAN)  &kp LS(QUESTION)  &kp ENTER
+                                             &left_up   &trans                    &right_down  &trans    &trans  &trans            &left_up              &right_down
             >;
         };
 
@@ -413,16 +422,6 @@
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-        };
-
-        layer_7 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
-            >;
         };
     };
 };
