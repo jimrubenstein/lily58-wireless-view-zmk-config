@@ -95,17 +95,17 @@
         };
 
         rh_open_curly_brackets {
-            bindings = <&td_morph_curly_brkt>;
+            bindings = <&morph_curly_brackets>;
             key-positions = <19 31>;
         };
 
         rh_open_paren {
-            bindings = <&td_morph_parens>;
+            bindings = <&morph_parens>;
             key-positions = <30 31>;
         };
 
         lh_open_sqr_bracket {
-            bindings = <&td_morph_sqr_brkt>;
+            bindings = <&morph_sqr_brackets>;
             key-positions = <44 45>;
         };
 
@@ -392,11 +392,11 @@
 
         programming {
             bindings = <
-&kp LS(LG(GRAVE))  &kp LG(GRAVE)  &trans     &trans     &kp LS(LC(LG(NUMBER_4)))  &trans                         &php_open_close   &php_echo_close       &trans                 &trans                &trans            &kp BACKSPACE
-&trans             &trans         &trans     &trans     &kp LS(LG(R))             &kp RG(T)                      &function         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans                &trans            &kp PIPE
-&kp CAPS           &kp LG(A)      &trans     &kp LG(D)  &trans                    &trans                         &kp LEFT_BRACE    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp RIGHT_BRACE       &kp SEMICOLON     &kp NON_US_BACKSLASH
-&trans             &trans         &kp LG(X)  &kp LG(C)  &kp LG(V)                 &trans       &trans    &trans  &template_output  &trans                &kp LS(LESS_THAN)      &kp LS(GREATER_THAN)  &kp LS(QUESTION)  &kp ENTER
-                                             &left_up   &trans                    &right_down  &trans    &trans  &trans            &left_up              &right_down
+&kp LS(LG(GRAVE))  &kp LG(NUMBER_1)  &kp LG(NUMBER_2)  &kp LG(NUMBER_3)  &kp LS(LC(LG(NUMBER_4)))  &kp LG(N5)                    &php_open_close   &php_echo_close       &trans                 &trans                &trans            &kp BACKSPACE
+&kp LG(GRAVE)      &kp LG(Q)         &kp LG(W)         &kp LG(E)         &kp LS(LG(R))             &kp RG(T)                     &function         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans                &trans            &kp PIPE
+&kp CAPS           &kp LG(A)         &kp LG(S)         &kp LG(D)         &kp LG(F)                 &kp LG(G)                     &kp LEFT_BRACE    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp RIGHT_BRACE       &kp SEMICOLON     &kp NON_US_BACKSLASH
+&kp LCTRL          &kp LG(Z)         &kp LG(X)         &kp LG(C)         &kp LG(V)                 &kp LG(B)   &trans    &trans  &template_output  &trans                &kp LS(LESS_THAN)      &kp LS(GREATER_THAN)  &kp LS(QUESTION)  &kp ENTER
+                                                       &kp LEFT_ALT      &trans                    &trans      &trans    &trans  &trans            &left_up              &right_down
             >;
         };
 
