@@ -387,11 +387,11 @@
 
             display-name = "Base";
             bindings = <
-&kp ESC              &kp N1                      &kp N2                   &kp N3                      &kp N4                          &kp N5                                                          &kp N6   &kp N7                                &kp N8                   &kp N9                    &kp N0                                &kp EQUAL
-&kp TAB              &kp Q                       &kp W                    &kp E                       &kp R                           &kp T                                                           &kp Y    &kp U                                 &kp I                    &kp O                     &kp P                                 &kp MINUS
-&kp LCTRL            &leftHand_hr_mt LEFT_ALT A  &leftHand_hr_mt LCTRL S  &leftHand_hr_mt LEFT_GUI D  &leftHand_hr_mt_shift LSHIFT F  &kp G                                                           &kp H    &rightHand_hr_mt_shift RIGHT_SHIFT J  &rightHand_hr_mt RGUI K  &rightHand_hr_mt RCTRL L  &rightHand_hr_mt RIGHT_ALT SEMICOLON  &kp SQT
-&tap_dance_capslock  &kp Z                       &kp X                    &kp C                       &kp V                           &kp B       &tap_dance_toggle_numbers      &th_arrow_layer 2 0  &kp N    &kp M                                 &kp COMMA                &kp DOT                   &kp FSLH                              &kp ENTER
-                                                                          &left_up                    &mo 3                           &kp LSHIFT  &tap_bspace_hold_layer3 3 0    &kp SPACE            &kp RET  &left_up                              &right_down
+&kp ESC              &kp N1                      &kp N2                   &kp N3                      &kp N4                          &kp N5                                                    &kp N6   &kp N7                                &kp N8                   &kp N9                    &kp N0                                &kp EQUAL
+&kp TAB              &kp Q                       &kp W                    &kp E                       &kp R                           &kp T                                                     &kp Y    &kp U                                 &kp I                    &kp O                     &kp P                                 &kp MINUS
+&kp LSHIFT           &leftHand_hr_mt LEFT_ALT A  &leftHand_hr_mt LCTRL S  &leftHand_hr_mt LEFT_GUI D  &leftHand_hr_mt_shift LSHIFT F  &kp G                                                     &kp H    &rightHand_hr_mt_shift RIGHT_SHIFT J  &rightHand_hr_mt RGUI K  &rightHand_hr_mt RCTRL L  &rightHand_hr_mt RIGHT_ALT SEMICOLON  &kp SQT
+&tap_dance_capslock  &kp Z                       &kp X                    &kp C                       &kp V                           &kp B   &tap_dance_toggle_numbers    &th_arrow_layer 2 0  &kp N    &kp M                                 &kp COMMA                &kp DOT                   &kp FSLH                              &kp ENTER
+                                                                          &left_up                    &trans                          &mo 3   &backspace_delete            &kp SPACE            &kp RET  &left_up                              &right_down
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -409,7 +409,7 @@
 
         navigation {
             bindings = <
-&kp LC(LG(Q))   &trans        &trans    &trans                  &kp LS(LA(LC(NUMBER_4)))  &kp HOME                                       &kp C_PREVIOUS  &kp C_NEXT    &kp C_PLAY_PAUSE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &to 4
+&kp LC(LG(Q))   &trans        &trans    &trans                  &kp LS(LA(LC(NUMBER_4)))  &kp HOME                                       &kp C_PREVIOUS  &kp C_NEXT    &kp C_PLAY_PAUSE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &to 5
 &trans          &trans        &kp UP    &kp LS(LG(LEFT_BRACE))  &kp LG(LS(RIGHT_BRACE))   &kp PAGE_UP                                    &kp C_MUTE      &kp LG(LEFT)  &kp LG(RIGHT)     &trans             &trans           &trans
 &trans          &kp LEFT      &kp DOWN  &kp RIGHT               &trans                    &kp PAGE_DOWN                                  &trans          &kp RSHIFT    &kp RIGHT_GUI     &kp RCTRL          &kp RIGHT_ALT    &trans
 &kp LEFT_SHIFT  &kp LG(LEFT)  &trans    &kp LG(RIGHT)           &trans                    &kp END        &kp LSHIFT           &trans     &trans          &trans        &trans            &trans             &trans           &trans
@@ -419,11 +419,21 @@
 
         programming {
             bindings = <
-&kp LS(LG(GRAVE))  &kp LG(NUMBER_1)  &kp LG(NUMBER_2)  &kp LG(NUMBER_3)  &kp LS(LC(LG(NUMBER_4)))  &kp LG(N5)                    &php_open_close  &php_echo_close       &trans                 &trans                &trans             &kp BACKSPACE
-&kp LG(GRAVE)      &kp LG(Q)         &kp LG(W)         &kp LG(E)         &kp LS(LG(R))             &kp RG(T)                     &trans           &trans                &trans                 &kp LEFT_BRACE        &kp RIGHT_BRACE    &kp PIPE
-&kp CAPS           &kp LG(A)         &kp LG(S)         &kp LG(D)         &kp LG(F)                 &kp LG(G)                     &trans           &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &kp NON_US_BACKSLASH
-&kp LCTRL          &kp LG(Z)         &kp LG(X)         &kp LG(C)         &kp LG(V)                 &kp LG(B)   &trans    &trans  &trans           &trans                &kp LS(LESS_THAN)      &kp LS(GREATER_THAN)  &kp LS(QUESTION)   &kp ENTER
-                                                       &kp LEFT_ALT      &trans                    &trans      &trans    &trans  &trans           &left_up              &right_down
+&kp LS(LG(GRAVE))  &kp LG(NUMBER_1)  &kp LG(NUMBER_2)  &kp LG(NUMBER_3)  &kp LS(LC(LG(NUMBER_4)))  &kp LG(N5)                    &php_open_close       &php_echo_close        &trans             &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSPACE
+&kp LG(GRAVE)      &kp LG(Q)         &kp LG(W)         &kp LG(E)         &kp LS(LG(R))             &kp RG(T)                     &trans                &trans                 &trans             &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PIPE
+&kp CAPS           &kp LG(A)         &kp LG(S)         &kp LG(D)         &kp LG(F)                 &kp LG(G)                     &trans                &trans                 &trans             &trans                &trans                 &kp NON_US_BACKSLASH
+&kp LCTRL          &kp LG(Z)         &kp LG(X)         &kp LG(C)         &kp LG(V)                 &kp LG(B)   &trans    &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LS(LESS_THAN)  &kp LS(GREATER_THAN)  &kp LS(QUESTION)       &kp ENTER
+                                                       &kp LEFT_ALT      &trans                    &trans      &trans    &trans  &trans                &left_up               &right_down
+            >;
+        };
+
+        nums {
+            bindings = <
+&trans  &trans        &trans        &trans         &trans        &trans                           &trans         &trans        &trans        &trans        &trans        &kp EQUAL
+&trans  &kp LS(EXCL)  &kp LS(AT)    &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)                    &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)  &kp LS(LPAR)  &kp LS(RPAR)  &kp LS(PLUS)
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3   &kp NUMBER_4  &kp N5                           &kp N6         &kp N7        &kp N8        &kp N9        &kp N0        &kp MINUS
+&trans  &trans        &trans        &trans         &trans        &trans         &trans    &trans  &trans         &trans        &trans        &trans        &trans        &kp FSLH
+                                    &trans         &trans        &kp LSHFT      &trans    &trans  &trans         &trans        &trans
             >;
         };
 
