@@ -420,8 +420,8 @@
         programming {
             bindings = <
 &kp LG(GRAVE)      &kp LG(NUMBER_1)  &kp LG(NUMBER_2)  &kp LG(NUMBER_3)  &kp LS(LC(LG(NUMBER_4)))  &kp LG(N5)                    &php_open_close       &php_echo_close        &trans             &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDER
-&kp LG(LS(GRAVE))  &kp LG(Q)         &kp LG(W)         &kp LG(E)         &kp LS(LG(R))             &kp RG(T)                     &trans                &trans                 &trans             &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PIPE
-&kp LSHIFT         &kp LG(A)         &kp LG(S)         &kp LG(D)         &kp LG(F)                 &kp LG(G)                     &trans                &trans                 &trans             &trans                &trans                 &kp NON_US_BACKSLASH
+&kp LG(LS(GRAVE))  &kp LG(Q)         &kp LG(W)         &kp LG(E)         &kp LS(LG(R))             &kp RG(T)                     &trans                &trans                 &trans             &none                 &kp LEFT_BRACKET       &kp RIGHT_BRACKET
+&kp LSHIFT         &kp LG(A)         &kp LG(S)         &kp LG(D)         &kp LG(F)                 &kp LG(G)                     &trans                &trans                 &trans             &trans                &kp COLON              &kp DOUBLE_QUOTES
 &kp LCTRL          &kp LG(Z)         &kp LG(X)         &kp LG(C)         &kp LG(V)                 &kp LG(B)   &trans    &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LS(LESS_THAN)  &kp LS(GREATER_THAN)  &kp LS(QUESTION)       &kp ENTER
                                                        &kp LEFT_ALT      &kp LEFT_GUI              &trans      &trans    &trans  &kp RIGHT_GUI         &kp RIGHT_ALT          &kp RCTRL
             >;
