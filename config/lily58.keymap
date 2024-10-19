@@ -180,12 +180,12 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <275>;
-            quick-tap-ms = <225>;
+            tapping-term-ms = <265>;
+            quick-tap-ms = <200>;
             flavor = "balanced";
             hold-trigger-key-positions = <6 18 30 44 43 54 55 56 57 7 8 9 19 20 21 31 32 33 45 46 47 10 11 22 23 34 35 48 49>;
             hold-trigger-on-release;
-            require-prior-idle-ms = <135>;
+            require-prior-idle-ms = <115>;
         };
 
         rightHand_hr_mt_shift: rightHand_hr_mt_shift {
@@ -194,11 +194,11 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <275>;
-            quick-tap-ms = <225>;
+            tapping-term-ms = <165>;
+            quick-tap-ms = <200>;
             flavor = "balanced";
             hold-trigger-on-release;
-            require-prior-idle-ms = <135>;
+            require-prior-idle-ms = <115>;
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 42 50 51 52 53>;
         };
 
@@ -367,10 +367,9 @@
             bindings = <&mo>, <&backspace_delete>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <350>;
-            quick-tap-ms = <275>;
-            flavor = "balanced";
-            retro-tap;
+            tapping-term-ms = <155>;
+            quick-tap-ms = <125>;
+            flavor = "tap-preferred";
         };
 
         th_space_layer: th_space_layer {
@@ -379,8 +378,8 @@
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <175>;
-            quick-tap-ms = <85>;
+            tapping-term-ms = <155>;
+            quick-tap-ms = <125>;
             flavor = "tap-preferred";
         };
     };
@@ -398,11 +397,11 @@
 
             display-name = "Base";
             bindings = <
-&kp ESC              &kp N1                      &kp N2                   &kp N3                      &kp N4                          &kp N5                                                                &kp N6     &kp N7                                &kp N8                   &kp N9                    &kp N0                                &kp EQUAL
-&kp TAB              &kp Q                       &kp W                    &kp E                       &kp R                           &kp T                                                                 &kp Y      &kp U                                 &kp I                    &kp O                     &kp P                                 &kp MINUS
-&kp LSHIFT           &leftHand_hr_mt LEFT_ALT A  &leftHand_hr_mt LCTRL S  &leftHand_hr_mt LEFT_GUI D  &leftHand_hr_mt_shift LSHIFT F  &kp G                                                                 &kp H      &rightHand_hr_mt_shift RIGHT_SHIFT J  &rightHand_hr_mt RGUI K  &rightHand_hr_mt RCTRL L  &rightHand_hr_mt RIGHT_ALT SEMICOLON  &kp SQT
-&tap_dance_capslock  &kp Z                       &kp X                    &kp C                       &kp V                           &kp B           &tap_dance_toggle_numbers    &th_arrow_layer 2 0      &kp N      &kp M                                 &kp COMMA                &kp DOT                   &kp FSLH                              &mo 4
-                                                                          &left_up                    &mo 3                           &kp LEFT_SHIFT  &backspace_delete            &th_space_layer 3 SPACE  &kp ENTER  &left_up                              &right_down
+&kp ESC              &kp N1                      &kp N2                   &kp N3                      &kp N4                          &kp N5                                                                             &kp N6     &kp N7                                &kp N8                   &kp N9                    &kp N0                                &kp EQUAL
+&kp TAB              &kp Q                       &kp W                    &kp E                       &kp R                           &kp T                                                                              &kp Y      &kp U                                 &kp I                    &kp O                     &kp P                                 &kp MINUS
+&kp LSHIFT           &leftHand_hr_mt LEFT_ALT A  &leftHand_hr_mt LCTRL S  &leftHand_hr_mt LEFT_GUI D  &leftHand_hr_mt_shift LSHIFT F  &kp G                                                                              &kp H      &rightHand_hr_mt_shift RIGHT_SHIFT J  &rightHand_hr_mt RGUI K  &rightHand_hr_mt RCTRL L  &rightHand_hr_mt RIGHT_ALT SEMICOLON  &kp SQT
+&tap_dance_capslock  &kp Z                       &kp X                    &kp C                       &kp V                           &kp B                        &tap_dance_toggle_numbers    &th_arrow_layer 2 0      &kp N      &kp M                                 &kp COMMA                &kp DOT                   &kp FSLH                              &mo 4
+                                                                          &left_up                    &mo 3                           &tap_bspace_hold_layer3 3 0  &kp LSHIFT                   &th_space_layer 3 SPACE  &kp ENTER  &left_up                              &right_down
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
